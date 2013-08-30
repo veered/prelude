@@ -17,6 +17,13 @@
 (require 'ruby-end)
 (electric-pair-mode 0)
 
+(require 'ruby-block)
+(ruby-block-mode t)
+(setq ruby-block-highlight-toggle t)
+
+(require 'flymake-ruby)
+(add-hook 'ruby-mode-hook 'flymake-ruby-load)
+
 ; Kill ring search!
 (autoload 'kill-ring-search "kill-ring-search"
   "Search the kill ring in the minibuffer."
